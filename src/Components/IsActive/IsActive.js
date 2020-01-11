@@ -1,2 +1,2 @@
-import { USER } from "../DataUsers/DataUsers";
-export const ISACTIVE = [...USER];
+import { user } from "../DataUsers/DataUsers";
+export const ISACTIVE = [...user];

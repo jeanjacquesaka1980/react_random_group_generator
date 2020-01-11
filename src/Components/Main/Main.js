@@ -4,45 +4,46 @@ import Input from "../Input/Input";
 import MemberCard from "../MemberCard/MemberCard";
 
 import { image } from "faker";
-import { USER } from "../DataUsers/DataUsers";
-import { ISACTIVE } from "../IsActive/IsActive";
-
-let userActive = USER.map((user) => {
-  return user.active
-})
-console.log(userActive)
+import { user } from "../DataUsers/DataUsers";
 
 class Main extends React.Component {
   state = {
-    userArr: USER
-  }
+    userArr: user
+  };
 
-  handleClick = (id) => {
-    // userActive = false;
-    console.log(userActive)
-    console.log(id)
-  }
+  handleClick = id => {
+    user.forEach(obj => {
+      if (obj.id === id) obj.active = !obj.active;
+    });
+  };
 
-  checkIsActive = () => {
-    console.log(ISACTIVE);
-  }
+  // checkIsActive = () => {
+  //   console.log(user);
+  // };
 
-  render (){
-
-    const MemberCardGenerated = this.state.userArr.map((user) => {
-      return <MemberCard handleOnClick={this.handleClick} src={image.avatar()} id={user.id} key={user.id} firstName={user.name}/>
-    })
+  render() {
+    const MemberCardGenerated = this.state.userArr.map(user => {
+      return (
+        <MemberCard
+          handleOnClick={this.handleClick}
+          src={image.avatar()}
+          id={user.id}
+          key={user.id}
+          firstName={user.name}
+        />
+      );
+    });
 
     return (
       <div className="container">
         <div className="row text-center mx-auto">
           <Input />
           {MemberCardGenerated}
-          <button onClick={this.checkIsActive}>Active or not ? </button>
+          {/* <button onClick={this.checkIsActive}>Active or not ? </button> */}
         </div>
       </div>
     );
   }
-};
+}
 
 export default Main;

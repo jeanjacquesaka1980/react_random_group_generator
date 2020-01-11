@@ -1,5 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 class Input extends React.Component {
   constructor(props) {
@@ -12,12 +12,12 @@ class Input extends React.Component {
   handleInput = e => {
     const inputNumber = e.target.value;
 
-    if (isNaN(inputNumber)){
-        alert("It's not a number !")
+    if (isNaN(inputNumber)) {
+      alert("It's not a number !");
     } else {
-        this.setState({
-            input: inputNumber
-          });
+      this.setState({
+        input: inputNumber
+      });
     }
   };
 
@@ -28,14 +28,20 @@ class Input extends React.Component {
   render() {
     return (
       <div className="col-12">
-        <h1>{this.state.input}</h1>
-        <input
-          value={this.state.input}
-          onChange={this.handleInput}
-          type="text"
-          placeholder="How many ?"
-        ></input>
-        <button onClick={this.handleButton} type="button" >Click</button>
+        <div className="input-group my-3">
+          <input
+            className="form-control"
+            value={this.state.input}
+            onChange={this.handleInput}
+            type="text"
+            placeholder="How many per group ?"
+          ></input>
+          <div className="input-group-append">
+            <button onClick={this.handleButton} type="button" className="btn btn-success">
+              Click !
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
