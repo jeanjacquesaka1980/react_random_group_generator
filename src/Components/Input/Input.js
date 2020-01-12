@@ -34,11 +34,11 @@ class Input extends React.Component {
             value={this.props.value}
             onChange={this.props.onChange}
             type="number"
-            placeholder="How many per group ?"
+            placeholder="How many persons would you like per group ?"
           ></input>
           <div className="input-group-append">
             <button onClick={this.props.handleGroup} type="button" className="btn btn-success">
-              Click !
+              Generate !
             </button>
           </div>
         </div>
