@@ -1,3 +1,11 @@
 button {
     width: 150px;
 }
+
+.icon {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 5px;
+    left: 152px;
+}
