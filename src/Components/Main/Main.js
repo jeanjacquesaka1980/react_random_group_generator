@@ -116,6 +116,7 @@ class Main extends React.Component {
         return (
           <MemberCard
             className="col-4"
+            // success={randomLeader.id === user.id && "col-4 bg-success"}
             handleOnClick={this.handleClick}
             src={user.image}
             icon={
@@ -173,3 +174,4 @@ class Main extends React.Component {
 }
 
 export default Main;
+
