@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Input from "../Input/Input";
 import MemberCard from "../MemberCard/MemberCard";
+import Groups from "../Groups/Groups";
 import "./Main.css";
 
 import { user } from "../DataUsers/DataUsers";
@@ -134,10 +135,7 @@ class Main extends React.Component {
       // console.log(newGroup[0].key)
 
       groups.push(
-        <div className="groupBox row p-3 m-3 shadow">
-          <h2 className="col-12 m-3">GROUP {groupNum}</h2>
-          {newGroup}
-        </div>
+        <Groups groupNum={groupNum} newGroup={newGroup}/>
       );
       groupNum += 1;
       // console.log(groupNum)

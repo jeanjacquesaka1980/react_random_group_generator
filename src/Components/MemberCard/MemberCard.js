@@ -17,19 +17,21 @@ class MemberCard extends React.Component {
   };
 
   render() {
+    const { className, src, firstName, icon, id } = this.props;
+    
     return (
-      <div className={this.props.className}>
+      <div className={className}>
         <div className="card mb-3 border-0 shadow">
           <div className="row no-gutters">
             <div className="col-md-4">
-              <img src={this.props.src} className="card-img rounded-circle shadow" alt="..."></img>
+              <img src={src} className="card-img rounded-circle shadow" alt="..."></img>
             </div>
             <div className="col-md-8">
               <div className="card-body float-right">
-                <p className="card-text">{this.props.firstName}</p>
-                <img className="icon" src={this.props.icon}></img>
+                <p className="card-text">{firstName}</p>
+                <img className="icon" src={icon}></img>
                 <button
-                    onClick={() => this.handleClick(this.props.id)}
+                    onClick={() => this.handleClick(id)}
                     // onClick={this.handleClick}
                     type="button"
                     className={this.state.isActive ? `${"btn btn-success"}` : `${"btn btn-danger"}`}
