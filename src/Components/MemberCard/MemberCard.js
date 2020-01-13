@@ -10,6 +10,7 @@ class MemberCard extends React.Component {
   };
 
   handleClick = id => {
+
     this.props.handleOnClick(id);
 
     this.setState({
@@ -19,15 +20,14 @@ class MemberCard extends React.Component {
 
   render() {
     const { className, src, firstName, icon, id } = this.props;
+    const isActive = this.state.isActive
+      ? "card mb-3 border-0 shadow"
+      : "card mb-3 border-0 shadow bg-danger";
 
     return (
-      <div className={className}>
+      <div className="col-4">
         <div
-          className={
-            this.state.isActive
-              ? "card mb-3 border-0 shadow"
-              : "card mb-3 border-0 shadow bg-danger"
-          }
+          className={isActive}
         >
           <div className="row no-gutters">
             <div className="col-md-4">

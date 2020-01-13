@@ -9,8 +9,9 @@ import { user } from "../DataUsers/DataUsers";
 
 class Main extends React.Component {
   state = {
-    input: "",
-    memberCard: ""
+    input: 1,
+    memberCard: "",
+    isActive: true
   };
 
   componentDidMount() {
@@ -33,6 +34,10 @@ class Main extends React.Component {
   }
 
   handleClick = id => {
+    this.setState({
+      isActive: !this.state.isActive
+    });
+
     user.forEach(obj => {
       if (obj.id === id) obj.active = !obj.active;
     });
@@ -41,17 +46,14 @@ class Main extends React.Component {
 
   handleInput = e => {
     const inputNumber = e.target.value;
+    console.log(inputNumber);
 
-    if (isNaN(inputNumber)) {
-      alert("It's not a number !");
-    } else {
-      this.setState({
-        input: inputNumber
-      });
-    }
+    this.setState({
+      input: Number(inputNumber)
+    });
   };
 
-  handleGroup = id => {
+  handleGroup = () => {
     if (
       isNaN(this.state.input) ||
       this.state.input === [] ||
@@ -113,10 +115,10 @@ class Main extends React.Component {
       // console.log(randomLeader)
 
       let newGroup = newElement.map(user => {
+        const isLeader = randomLeader.id === user.id ? "bg-success" : "";
         return (
           <MemberCard
-            className="col-4"
-            // success={randomLeader.id === user.id && "col-4 bg-success"}
+            isLeader={isLeader}
             handleOnClick={this.handleClick}
             src={user.image}
             icon={
@@ -135,9 +137,7 @@ class Main extends React.Component {
 
       // console.log(newGroup[0].key)
 
-      groups.push(
-        <Groups groupNum={groupNum} newGroup={newGroup}/>
-      );
+      groups.push(<Groups groupNum={groupNum} newGroup={newGroup} />);
       groupNum += 1;
       // console.log(groupNum)
 
@@ -174,4 +174,3 @@ class Main extends React.Component {
 }
 
 export default Main;
-
