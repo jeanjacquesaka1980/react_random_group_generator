@@ -13,3 +13,13 @@ button {
 .rounded-circle {
     margin: 5px 5px;
 }
+
+.btn-success {
+    background-color: #EB7661 !important;
+    border-color: #EB7661 !important;
+}
+
+.btn-success:focus {
+    border: 1px solid #EB7661 !important;
+    box-shadow: 0 0 0 0.2rem rgb(242, 180, 169) !important;
+}

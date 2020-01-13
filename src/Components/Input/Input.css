@@ -1,6 +1,12 @@
 .btn-generate {
     background-color: #EB7661 !important;
+    border-color: #EB7661 !important;
     color: #f9f9f9;
+}
+
+.btn-generate:focus {
+    border: 1px solid #EB7661 !important;
+    box-shadow: 0 0 0 0.2rem rgb(242, 180, 169) !important;
 }
 
 .dropdown-toggle {
