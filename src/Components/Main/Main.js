@@ -63,10 +63,8 @@ class Main extends React.Component {
     const chunked_arr = [];
 
     user.forEach(obj => {
-      if (obj.active) {
-        // push all the true into a new array
-        chunked_arr.push(obj);
-      }
+      // push all the true into a new array
+      obj.active && chunked_arr.push(obj);
       // console.log(chunked_arr)
     });
 
@@ -121,7 +119,7 @@ class Main extends React.Component {
             src={user.image}
             icon={
               randomLeader.id === user.id
-                ? "http://www.linzwiki.at/w/images/2/2c/Star-icon.png"
+                ? "https://media.glassdoor.com/sqll/1527108/talent-garden-squarelogo-1498220206195.png"
                 : ""
             }
             id={user.id}

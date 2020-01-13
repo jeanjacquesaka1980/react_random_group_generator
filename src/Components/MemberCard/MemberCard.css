@@ -1,5 +1,5 @@
 button {
-    width: 150px;
+    width: 9.375em;
 }
 
 .icon {
@@ -8,4 +8,8 @@ button {
     position: absolute;
     top: 5px;
     left: 152px;
+}
+
+.rounded-circle {
+    margin: 5px 5px;
 }
